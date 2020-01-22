@@ -3,7 +3,7 @@
 
 		<div class="hu-content">
 
-			<?php if (get_field('hu_theme_footer_display_sale_note', 'option')) : ?>
+		
 
 				<div class="hu-row">
 					<p><?php the_field('hu_theme_footer_sale_note_text', 'option'); ?>, ends in 
@@ -20,7 +20,7 @@
 					</ul>
 				</div>
 
-			<?php endif; ?>
+
 
 		</div>
 

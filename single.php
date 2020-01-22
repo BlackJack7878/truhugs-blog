@@ -44,15 +44,15 @@
 
 
 
-<section class="hu-single">
+<section class="hu-single" id="main-content">
 
 	<div class="hu-content">
 
-		<div class="hu-row">
+		<div class="hu-row" >
 
-			<div class="hu-col">
+			<div class="hu-col" id="sidebar">
 
-				<div class="hu-author-info">
+				<div class="hu-author-info sidebar__inner" >
 
 					<div class="hu-single-user-data">
 						<?php
@@ -113,7 +113,7 @@
 						?>
 					</div>
 
-					<div class="hu-go-top">
+					<div class="hu-go-top" id="go-top">
 						<p>
 							GO TO TOP 
 						</p>
@@ -214,11 +214,48 @@
 
 <section class="hu-single-similar-posts">
 
-	<div class="ho-content">
+	<div class="hu-content">
+
+		<div class="hu-row">
+			<h2>
+				Similary Post
+			</h2>
+		</div>
 		
 		<div class="hu-row">
 
+			<?php
 
+			$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 4, 'post__not_in' => array($post->ID) ) );
+			if( $related ) foreach( $related as $post ) {
+				setup_postdata($post); ?>
+
+				<a href="<?php the_permalink(); ?>">
+
+					<div class="hu-similar-post" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id(get_sub_field('post')->ID), 'thumbnail' ); ?>);">
+
+						<h5>
+							<?php the_title(); ?>
+						</h5>
+
+						<div class="hu-date">
+
+							<p>
+								<?php echo do_shortcode('[rt_reading_time label="" postfix="min read" postfix_singular="min read" post_id="' . get_sub_field('post')->ID . '"]'); ?>
+							</p>
+
+							<p>								
+								<?php echo get_the_date('F j, Y', get_sub_field('post')->ID); ?>
+							</p>
+
+						</div>	
+
+					</div>
+
+				</a> 
+
+			<?php }
+			wp_reset_postdata(); ?>
 			
 		</div>
 
@@ -228,11 +265,21 @@
 
 <section class="hu-single-most-popular">
 
-	<div class="ho-content">
+	<div class="hu-content">
+
+		<div class="hu-row">
+			<h2>
+				Most Popular
+			</h2>
+		</div>
 		
 		<div class="hu-row">
 
 			<div class="hu-posts-slider">
+
+				
+				<div class="hu-slider-btn prev">	
+				</div>
 
 				<div class="hu-single-slider">
 
@@ -243,45 +290,50 @@
 					foreach( $myposts as $post ) : setup_postdata($post); ?>
 
 						
-						<a href="<?php the_permalink(); ?>">
-							
-							<div class="hu-single-slider-item" >
+						<div class="hu-single-slider-item">
+
+							<a href="<?php the_permalink(); ?>">
 
 								<img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id(get_sub_field('post')->ID), 'thumbnail' ); ?>" alt="">
-								
-								<?php the_title(); ?>
 
-								<div class="hu-date">
+							</a>
 
-									<p>
-										<?php echo do_shortcode('[rt_reading_time label="" postfix="min read" postfix_singular="min read" post_id="' . get_sub_field('post')->ID . '"]'); ?>
-									</p>
+							<a href="<?php the_permalink(); ?>" class='hu-title'>								
+								<h5>
+									<?php the_title(); ?>
+								</h5>
+							</a>	
 
-									<p>								
-										<?php echo get_the_date('F j, Y', get_sub_field('post')->ID); ?>
-									</p>
+							<div class="hu-date">
 
-								</div>	
+								<p>
+									<?php echo do_shortcode('[rt_reading_time label="" postfix="min read" postfix_singular="min read" post_id="' . get_sub_field('post')->ID . '"]'); ?>
+								</p>
 
-								
-								<div class="so-single-tags">
-									<?php
-									$tags = get_the_tags();
+								<p>								
+									<?php echo get_the_date('F j, Y', get_sub_field('post')->ID); ?>
+								</p>
 
-									foreach ($tags as $tag) {
-										echo "<a href='" . get_tag_link($tag->term_id) . "'>" . $tag->name . "</a>";
-									}
+							</div>	
 
-									?>
-								</div>
+							<div class="so-single-tags">
+								<?php
+								$tags = get_the_tags();
 
+								foreach ($tags as $tag) {
+									echo "<a href='" . get_tag_link($tag->term_id) . "'>" . $tag->name . "</a>";
+								}
+
+								?>
 							</div>
 
-						</a>						
+						</div>
 
 					<?php endforeach; ?>
-				</ul>
 
+				</div>
+
+			<div class="hu-slider-btn next">	
 			</div>
 
 		</div>
@@ -290,6 +342,30 @@
 
 </div>
 
+</section>
+
+<section class="hu-single-mail-sub">
+
+	<div class="hu-content">
+		
+		<div class="hu-row">
+			
+			<h2>
+				<?php the_field(''); ?>Stay in touch with TruHugs
+			</h2>
+
+			<h6>
+				<?php the_field(''); ?>Aliqua aliquip enim ea amet do ipsum anim. Laboris eiusmod nisi veniam excepteur ipsum ullamco voluptate commodo.
+			</h6>
+
+			<div>
+				
+			</div>
+
+		</div>
+
+	</div>
+	
 </section>
 
 
