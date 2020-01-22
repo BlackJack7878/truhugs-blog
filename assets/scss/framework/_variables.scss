@@ -1,0 +1,22 @@
+//*
+//* COLORS
+//*
+
+$light: 10%;
+$dark: 12%;
+
+$main-color: #D1B782;
+$bg-color: #F2FAFE;
+
+$title-color: #000;
+$text-color: #000;
+
+$error-color: #f7454c;
+$success-color: #87bf48;
+
+$light-main-color: lighten($main-color, $light);
+
+$dark-main-color: darken($main-color, $dark);
+
+$link-color: #D1B782;
+$link-hover: $dark-main-color;

@@ -1,0 +1,175 @@
+@media screen and (max-width: 1600px) {
+	html, body, div, span, applet, object, iframe,
+	p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		@include font(15px, 1.4);
+	}
+
+	.hu-tag {
+		@include font(18px, 1.4);
+	}
+
+	.hu-row {
+		max-width: 1340px;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+	.hu-link {
+		@include font(12px, 1);
+	}
+
+	.hu-subheader {
+		@include font(18px, 1.4);
+	}
+
+	.hu-button {
+		@include font(12px, 1);
+		padding: 25px 58px;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		padding-bottom: 20px;
+	}
+
+	h1 {
+		@include font(70px, 1.1);
+	}
+
+	h2 {
+		@include font(60px, 1.1);
+	}
+
+	h3 {
+		@include font(38px, 1.1);
+	}
+
+	h4 {
+		@include font(32px, 1.1);
+	}
+
+	h5 {
+		@include font(26px, 1.1);
+	}
+
+	h6 {
+		@include font(16px, 1.1);
+	}
+
+	.hu-list {
+
+		li {
+			@include font(15px, 1.75);
+			margin-bottom: 10px;
+		}
+
+	}
+
+}
+
+@media screen and (max-width: 991px) {
+	.mo-anim-under,
+	.mo-anim-under_slow,
+	.mo-anim-fade,
+	.mo-anim-fade_slow,
+	.mo-anim-right,
+	.mo-anim-right_slow,
+	.mo-anim-left,
+	.mo-anim-left_slow,
+	.mo-anim-drop,
+	.mo-anim-drop_slow,
+	.mo-anim-fade_time,
+	.mo-anim-fadein_time {
+		opacity: 1;
+	}
+
+	.mo-anim-text {
+		opacity: 1 !important;
+	}
+
+	.mo-anim-image {
+
+		&:before {
+			display: none;
+		}
+
+	}
+
+	.hu-row {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 600px) {
+	// html, body, div, span, applet, object, iframe,
+	// p, blockquote, pre,
+	// a, abbr, acronym, address, big, cite, code,
+	// del, dfn, em, img, ins, kbd, q, s, samp,
+	// small, strike, strong, sub, sup, tt, var,
+	// b, u, i, center,
+	// dl, dt, dd, ol, ul, li,
+	// fieldset, form, label, legend,
+	// table, caption, tbody, tfoot, thead, tr, th, td,
+	// article, aside, canvas, details, embed, 
+	// figure, figcaption, footer, header, hgroup, 
+	// menu, nav, output, ruby, section, summary,
+	// time, mark, audio, video {
+	// 	@include font(15px, 1.75);
+	// }
+
+	h1, h2, h3, h4, h5, h6 {
+		padding-bottom: 15px;
+	}
+
+	h1 {
+		@include font(60px, 1.1);
+	}
+
+	h2 {
+		@include font(45px, 1.1);
+	}
+
+	h3 {
+		@include font(32px, 1.1);
+	}
+
+	h4 {
+		@include font(26px, 1.1);
+	}
+
+	h5 {
+		@include font(24px, 1.1);
+	}
+
+	h6 {
+		@include font(14px, 1.1);
+	}
+
+	.hu-button-invert {
+		@include font(13px, 1.4);
+		padding: 24px 60px;
+	}
+
+	.hu-row {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+}
+
+
